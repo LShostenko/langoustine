@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 requirements = Path(__file__).parent / 'requirements/core.txt'
 
@@ -21,7 +21,8 @@ setup(
     author='Luka Shostenko',
     author_email='luka.shostenko@gmail.com',
     url='https://github.com/lshostenko/langoustine/',
-    packages=['langoustine'],
+    packages=find_packages(include=['langoustine.*']),
+    py_modules=['langoustine.settings'],
     python_requires='>=3.5.0',
     install_requires=install_requires,
     include_package_data=True,
